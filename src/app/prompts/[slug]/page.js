@@ -9,8 +9,10 @@ export function generateStaticParams() {
   }));
 }
 
-export default function PromptDetailPage({ params }) {
-  const prompt = getPromptBySlug(params.slug);
+export default async function PromptDetailPage({ params }) {
+  const resolvedParams = await params;
+  const slug = typeof resolvedParams?.slug === 'string' ? resolvedParams.slug : '';
+  const prompt = getPromptBySlug(slug);
 
   if (!prompt) {
     notFound();
