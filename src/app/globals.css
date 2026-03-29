@@ -1,7 +1,7 @@
 :root {
   color-scheme: light;
-  --bg: #ffffff;
-  --panel: #ffffff;
+  --bg: #fafafa;
+  --panel: #fafafa;
   --line: #c8c8c8;
   --mobile-width: 430px;
 }
@@ -243,6 +243,117 @@ a {
   cursor: pointer;
 }
 
+.detail-form {
+  margin-top: 10px;
+}
+
+.detail-guide {
+  margin: 6px 0 0;
+  font-family: var(--font-noto-sans-kr), 'Noto Sans KR', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #4e4e4e;
+}
+
+.detail-form-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.detail-form-label {
+  width: 64px;
+  font-family: var(--font-noto-sans-kr), 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: #2a2a2a;
+}
+
+.detail-input {
+  border: 0;
+  border-bottom: 1px solid #d7d7d7;
+  background: transparent;
+  height: 18px;
+  padding: 0 2px;
+  outline: none;
+  font-family: var(--font-noto-sans-kr), 'Noto Sans KR', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  color: #333;
+}
+
+.detail-input::placeholder {
+  color: #9f9f9f;
+}
+
+.detail-input-year {
+  width: 38px;
+}
+
+.detail-input-month,
+.detail-input-day {
+  width: 24px;
+}
+
+.detail-input-place {
+  width: 68px;
+}
+
+.detail-input-choice {
+  width: 150px;
+}
+
+.detail-input-long {
+  width: 220px;
+}
+
+.detail-textarea {
+  width: calc(100% - 72px);
+  min-height: 56px;
+  resize: vertical;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  padding: 6px;
+  line-height: 1.35;
+}
+
+.detail-select {
+  width: 170px;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  height: 26px;
+  padding: 0 6px;
+}
+
+.detail-unit {
+  font-family: var(--font-noto-sans-kr), 'Noto Sans KR', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  color: #7f7f7f;
+}
+
+.detail-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--font-noto-sans-kr), 'Noto Sans KR', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #7f7f7f;
+}
+
+.detail-radio input {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+}
+
 .prompt-box {
   margin-top: 18px;
   background: #ffffff;
@@ -318,6 +429,31 @@ a {
   .detail-title {
     margin: 10px 0 12px;
     font-size: 22px;
+  }
+
+  .detail-form-label {
+    width: 60px;
+    font-size: 13px;
+  }
+
+  .detail-input {
+    font-size: 11px;
+  }
+
+  .detail-textarea {
+    width: 100%;
+  }
+
+  .detail-select {
+    width: 150px;
+  }
+
+  .detail-input-choice {
+    width: 170px;
+  }
+
+  .detail-input-long {
+    width: 200px;
   }
 
   .prompt-box {
