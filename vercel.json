@@ -1,4 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": false
+  "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/naver354b74158fed2c341ed37078b4646c58.html",
+      "destination": "/naver354b74158fed2c341ed37078b4646c58"
+    }
+  ]
 }
