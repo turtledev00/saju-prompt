@@ -5,9 +5,23 @@ import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 import './globals.css';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+
 export const metadata = {
+  metadataBase: new URL(siteUrl),
   title: '유사과학 프롬프트 위키',
   description: '사주팔자, 타로, 점성술 프롬프트를 모아둔 정적 웹사이트',
+  openGraph: {
+    title: '유사과학 프롬프트 위키',
+    description: '사주팔자, 타로, 점성술 프롬프트를 모아둔 정적 웹사이트',
+    images: ['/assets/images/prompt-1.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '유사과학 프롬프트 위키',
+    description: '사주팔자, 타로, 점성술 프롬프트를 모아둔 정적 웹사이트',
+    images: ['/assets/images/prompt-1.png'],
+  },
 };
 
 const notoSansKr = Noto_Sans_KR({
