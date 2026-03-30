@@ -11,6 +11,10 @@ export const metadata = {
   metadataBase: new URL(siteUrl),
   title: '유사과학 프롬프트 위키',
   description: '사주팔자, 타로, 점성술 프롬프트를 모아둔 정적 웹사이트',
+  icons: {
+    icon: [{ url: '/favicon.ico', sizes: 'any' }],
+    shortcut: ['/favicon.ico'],
+  },
   openGraph: {
     title: '유사과학 프롬프트 위키',
     description: '사주팔자, 타로, 점성술 프롬프트를 모아둔 정적 웹사이트',
