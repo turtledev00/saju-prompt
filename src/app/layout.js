@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Noto_Sans_KR } from 'next/font/google';
+import Script from 'next/script';
 
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 
@@ -38,6 +39,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body className={notoSansKr.variable}>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2881048601217100"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <GoogleAnalytics />
         <div className="page-wrap">
           <main className="phone">
