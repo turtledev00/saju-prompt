@@ -1,31 +1,24 @@
 import { notFound } from 'next/navigation';
 
 import PromptDetail from '@/components/PromptDetail';
-import { SUPPORTED_LOCALES, getLocaleMeta, getLocalePrefix, normalizeLocale } from '@/lib/i18n';
+import { getLocaleMeta, getLocalePrefix } from '@/lib/i18n';
 import { getPromptBySlug, getPrompts } from '@/lib/prompts';
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  const locales = SUPPORTED_LOCALES.filter((locale) => locale !== 'ko');
   const prompts = getPrompts('ko');
-
-  return locales.flatMap((lang) =>
-    prompts.map((prompt) => ({
-      lang,
-      slug: prompt.slug,
-    })),
-  );
+  return prompts.map((prompt) => ({ slug: prompt.slug }));
 }
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
-  const locale = normalizeLocale(resolvedParams?.lang);
   const slug = typeof resolvedParams?.slug === 'string' ? resolvedParams.slug : '';
+  const locale = 'ja';
   const localeMeta = getLocaleMeta(locale);
   const prompt = getPromptBySlug(slug, locale);
 
-  if (locale === 'ko' || !prompt) {
+  if (!prompt) {
     return {};
   }
 
@@ -44,15 +37,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function LocalePromptDetailPage({ params }) {
+export default async function JaPromptDetailPage({ params }) {
   const resolvedParams = await params;
-  const locale = normalizeLocale(resolvedParams?.lang);
   const slug = typeof resolvedParams?.slug === 'string' ? resolvedParams.slug : '';
-
-  if (locale === 'ko') {
-    notFound();
-  }
-
+  const locale = 'ja';
   const prompt = getPromptBySlug(slug, locale);
 
   if (!prompt) {
