@@ -2,6 +2,8 @@
 
 import { useMemo, useState } from 'react';
 
+import { getLocaleMeta } from '@/lib/i18n';
+
 function stripUserInputSection(text) {
   const lines = String(text || '').split('\n');
   const start = lines.findIndex((line) => /^\s*0\.\s*사용자 입력/.test(line));
@@ -69,6 +71,195 @@ function resolveAnalysisYear(rawYear) {
 
 function hasValue(value) {
   return String(value ?? '').trim().length > 0;
+}
+
+function getBasicInputI18n(locale) {
+  if (locale === 'en') {
+    return {
+      sectionAria: 'Basic input information',
+      birthDateLabel: 'Date of Birth',
+      birthTimeLabel: 'Time of Birth',
+      birthPlaceLabel: 'Place of Birth',
+      genderLabel: 'Gender',
+      analysisYearLabel: 'Analysis Year',
+      concernLabel: 'Question',
+      yearUnit: 'Y',
+      monthUnit: 'M',
+      dayUnit: 'D',
+      hourUnit: 'h',
+      minuteUnit: 'm',
+      lunarLabel: 'Lunar',
+      solarLabel: 'Solar',
+      maleLabel: 'Male',
+      femaleLabel: 'Female',
+      privateLabel: 'Private',
+      countryPlaceholder: 'Country',
+      cityPlaceholder: 'City/Region',
+      concernPlaceholder: 'Enter your situation or focus point',
+      headerUserInput: '0. User Input (fill in and use)',
+      headerBirthDate: 'Date of Birth',
+      headerBirthTime: 'Time of Birth',
+      headerBirthPlace: 'Place of Birth',
+      headerGender: 'Gender',
+      headerAnalysisYear: 'Analysis Year',
+      headerConcern: 'Current Situation / Question',
+    };
+  }
+
+  if (locale === 'zh') {
+    return {
+      sectionAria: '基础输入信息',
+      birthDateLabel: '出生日期',
+      birthTimeLabel: '出生时间',
+      birthPlaceLabel: '出生地',
+      genderLabel: '性别',
+      analysisYearLabel: '分析年份',
+      concernLabel: '关注问题',
+      yearUnit: '年',
+      monthUnit: '月',
+      dayUnit: '日',
+      hourUnit: '时',
+      minuteUnit: '分',
+      lunarLabel: '农历',
+      solarLabel: '阳历',
+      maleLabel: '男',
+      femaleLabel: '女',
+      privateLabel: '不公开',
+      countryPlaceholder: '国家',
+      cityPlaceholder: '地区',
+      concernPlaceholder: '请输入当前情况或关注点',
+      headerUserInput: '0. 用户输入（填写后使用）',
+      headerBirthDate: '出生日期',
+      headerBirthTime: '出生时间',
+      headerBirthPlace: '出生地',
+      headerGender: '性别',
+      headerAnalysisYear: '分析年份',
+      headerConcern: '当前情况/疑问',
+    };
+  }
+
+  if (locale === 'ja') {
+    return {
+      sectionAria: '基本入力情報',
+      birthDateLabel: '生年月日',
+      birthTimeLabel: '出生時間',
+      birthPlaceLabel: '出生地',
+      genderLabel: '性別',
+      analysisYearLabel: '分析年',
+      concernLabel: '気になること',
+      yearUnit: '年',
+      monthUnit: '月',
+      dayUnit: '日',
+      hourUnit: '時',
+      minuteUnit: '分',
+      lunarLabel: '旧暦',
+      solarLabel: '新暦',
+      maleLabel: '男',
+      femaleLabel: '女',
+      privateLabel: '非公開',
+      countryPlaceholder: '国',
+      cityPlaceholder: '地域',
+      concernPlaceholder: '現在の状況や確認したいポイントを入力',
+      headerUserInput: '0. ユーザー入力（入力して利用）',
+      headerBirthDate: '生年月日',
+      headerBirthTime: '出生時間',
+      headerBirthPlace: '出生地',
+      headerGender: '性別',
+      headerAnalysisYear: '分析対象年',
+      headerConcern: '現在の状況・質問',
+    };
+  }
+
+  return {
+    sectionAria: '기본 입력 정보',
+    birthDateLabel: '생년월일',
+    birthTimeLabel: '태어난 시간',
+    birthPlaceLabel: '태어난 장소',
+    genderLabel: '성별',
+    analysisYearLabel: '분석 연도',
+    concernLabel: '궁금한 점',
+    yearUnit: '년',
+    monthUnit: '월',
+    dayUnit: '일',
+    hourUnit: '시',
+    minuteUnit: '분',
+    lunarLabel: '음력',
+    solarLabel: '양력',
+    maleLabel: '남',
+    femaleLabel: '여',
+    privateLabel: '미공개',
+    countryPlaceholder: '국가',
+    cityPlaceholder: '지역',
+    concernPlaceholder: '현재 상황, 보고 싶은 포인트를 입력',
+    headerUserInput: '0. 사용자 입력 (여기 채워서 사용)',
+    headerBirthDate: '생년월일',
+    headerBirthTime: '태어난 시간',
+    headerBirthPlace: '태어난 장소',
+    headerGender: '성별',
+    headerAnalysisYear: '분석 대상 연도',
+    headerConcern: '현재 상황/궁금한 점',
+  };
+}
+
+function buildLocalizedBasicHeader(form, locale) {
+  const i18n = getBasicInputI18n(locale);
+  const calendarLabel = form.calendarType === 'lunar' ? i18n.lunarLabel : i18n.solarLabel;
+  const genderLabel =
+    form.gender === 'male' ? i18n.maleLabel : form.gender === 'female' ? i18n.femaleLabel : form.gender === 'private' ? i18n.privateLabel : '';
+
+  const year = String(form.birthYear || '').trim();
+  const month = String(form.birthMonth || '').trim();
+  const day = String(form.birthDay || '').trim();
+  const hour = String(form.birthHour || '').trim();
+  const minute = String(form.birthMinute || '').trim();
+  const country = String(form.birthCountry || '').trim();
+  const city = String(form.birthCity || '').trim();
+  const analysisYear = String(form.analysisYear || '').trim() || String(getCurrentYearNumber());
+  const concern = String(form.concern || '').trim();
+
+  const lines = [i18n.headerUserInput, ''];
+
+  if (hasValue(year) || hasValue(month) || hasValue(day)) {
+    if (locale === 'en') {
+      const dateValue = [year, month, day].filter(hasValue).join('-');
+      lines.push(`${i18n.headerBirthDate}: ${dateValue} (${calendarLabel})`);
+    } else {
+      const dateParts = [];
+      if (hasValue(year)) dateParts.push(`${year}${i18n.yearUnit}`);
+      if (hasValue(month)) dateParts.push(`${month}${i18n.monthUnit}`);
+      if (hasValue(day)) dateParts.push(`${day}${i18n.dayUnit}`);
+      lines.push(`${i18n.headerBirthDate}: ${dateParts.join(' ')} (${calendarLabel})`);
+    }
+  }
+
+  if (hasValue(hour) || hasValue(minute)) {
+    if (locale === 'en') {
+      const timeValue = `${hour || '00'}:${minute || '00'}`;
+      lines.push(`${i18n.headerBirthTime}: ${timeValue} (24h)`);
+    } else {
+      const timeParts = [];
+      if (hasValue(hour)) timeParts.push(`${hour}${i18n.hourUnit}`);
+      if (hasValue(minute)) timeParts.push(`${minute}${i18n.minuteUnit}`);
+      lines.push(`${i18n.headerBirthTime}: ${timeParts.join(' ')} (24h)`);
+    }
+  }
+
+  if (hasValue(country) || hasValue(city)) {
+    lines.push(`${i18n.headerBirthPlace}: ${[country, city].filter(hasValue).join(' ')}`);
+  }
+
+  if (hasValue(genderLabel)) {
+    lines.push(`${i18n.headerGender}: ${genderLabel}`);
+  }
+
+  lines.push(`${i18n.headerAnalysisYear}: ${analysisYear}`);
+
+  if (hasValue(concern)) {
+    lines.push(`${i18n.headerConcern}: ${concern}`);
+  }
+
+  lines.push('');
+  return lines.join('\n');
 }
 
 function resolveWealthMainConcern(tarotForm) {
@@ -422,7 +613,8 @@ function buildTarotHeader(type, tarotForm) {
   return lines.join('\n');
 }
 
-export default function PromptDetail({ prompt }) {
+export default function PromptDetail({ prompt, locale = 'ko' }) {
+  const localeMeta = getLocaleMeta(locale);
   const [toastVisible, setToastVisible] = useState(false);
   const [form, setForm] = useState({
     birthYear: '',
@@ -484,14 +676,29 @@ export default function PromptDetail({ prompt }) {
   const isPhysiognomy = useMemo(() => prompt.category === 'physiognomy', [prompt.category]);
   const physiognomyGuide = useMemo(() => getPhysiognomyGuide(prompt.title), [prompt.title]);
   const isMovingFengshui = useMemo(() => prompt.category === 'fengshui' && prompt.title.includes('이사'), [prompt.category, prompt.title]);
+  const isLocalizedNewYearPrompt = useMemo(() => locale !== 'ko' && prompt.slug === 'prompt-1', [locale, prompt.slug]);
+  const basicInputI18n = useMemo(() => getBasicInputI18n(locale), [locale]);
   const promptBodyForDisplay = useMemo(() => {
     const withoutUserInput = stripUserInputSection(prompt.promptBody);
     return prompt.category === 'fengshui' ? stripFengshuiInputSection(withoutUserInput) : withoutUserInput;
   }, [prompt.promptBody, prompt.category]);
   const lines = useMemo(() => promptBodyForDisplay.split('\n'), [promptBodyForDisplay]);
   const currentYearLabel = useMemo(() => `${getCurrentYearNumber()}년`, []);
+  const currentYearNumber = useMemo(() => String(getCurrentYearNumber()), []);
 
   const handleCopy = async () => {
+    if (locale !== 'ko') {
+      const localizedCopyText = isLocalizedNewYearPrompt ? `${buildLocalizedBasicHeader(form, locale)}${promptBodyForDisplay}` : promptBodyForDisplay;
+      try {
+        await navigator.clipboard.writeText(localizedCopyText);
+        setToastVisible(true);
+        setTimeout(() => setToastVisible(false), 1800);
+      } catch (_error) {
+        setToastVisible(false);
+      }
+      return;
+    }
+
     const body =
       prompt.category === 'tarot' || prompt.category === 'fengshui' || isPhysiognomy
         ? promptBodyForDisplay
@@ -530,13 +737,14 @@ export default function PromptDetail({ prompt }) {
   return (
     <main className="app-shell detail-page">
       <p className="detail-tag">{prompt.tag}</p>
-      <h1 className="detail-title">{prompt.title}</h1>
+      <h1 className="detail-title">{prompt.detailTitle || prompt.displayTitle || prompt.title}</h1>
 
       <button type="button" className="copy-button" onClick={handleCopy}>
-        &#128203; 프롬프트 복사
+        &#128203; {localeMeta.copyPrompt}
       </button>
 
-      {prompt.category === 'tarot' ? (
+      {locale === 'ko' ? (
+        prompt.category === 'tarot' ? (
         <section className="detail-form" aria-label="타로 입력 정보">
           {tarotType === 'wealth' ? (
             <>
@@ -946,11 +1154,11 @@ export default function PromptDetail({ prompt }) {
         <section className="detail-form" aria-label="기본 입력 정보">
           <div className="detail-form-row">
             <span className="detail-form-label">생년월일</span>
-            <input className="detail-input detail-input-year" type="text" value={form.birthYear} onChange={handleInputChange('birthYear')} placeholder="YYYY" />
+            <input className="detail-input detail-input-year" type="text" value={form.birthYear} onChange={handleInputChange('birthYear')} placeholder="YYYY" maxLength={4} />
             <span className="detail-unit">년</span>
-            <input className="detail-input detail-input-month" type="text" value={form.birthMonth} onChange={handleInputChange('birthMonth')} placeholder="MM" />
+            <input className="detail-input detail-input-month" type="text" value={form.birthMonth} onChange={handleInputChange('birthMonth')} placeholder="MM" maxLength={2} />
             <span className="detail-unit">월</span>
-            <input className="detail-input detail-input-day" type="text" value={form.birthDay} onChange={handleInputChange('birthDay')} placeholder="DD" />
+            <input className="detail-input detail-input-day" type="text" value={form.birthDay} onChange={handleInputChange('birthDay')} placeholder="DD" maxLength={2} />
             <span className="detail-unit">일</span>
             <label className="detail-radio">
               <input type="radio" name="calendarType" value="lunar" checked={form.calendarType === 'lunar'} onChange={handleInputChange('calendarType')} />
@@ -994,7 +1202,7 @@ export default function PromptDetail({ prompt }) {
 
           <div className="detail-form-row">
             <span className="detail-form-label">분석 연도</span>
-            <input className="detail-input detail-input-place" type="text" value={form.analysisYear} onChange={handleInputChange('analysisYear')} placeholder={currentYearLabel} />
+            <input className="detail-input detail-input-place" type="text" value={form.analysisYear} onChange={handleInputChange('analysisYear')} placeholder={currentYearLabel} maxLength={4} />
           </div>
 
           <div className="detail-form-row">
@@ -1002,7 +1210,76 @@ export default function PromptDetail({ prompt }) {
             <textarea className="detail-input detail-textarea" value={form.concern} onChange={handleInputChange('concern')} placeholder="현재 상황, 보고 싶은 포인트를 입력" />
           </div>
         </section>
-      )}
+      )
+      ) : null}
+
+      {locale !== 'ko' && isLocalizedNewYearPrompt ? (
+        <section className="detail-form" aria-label={basicInputI18n.sectionAria}>
+          <div className="detail-form-row">
+            <span className="detail-form-label">{basicInputI18n.birthDateLabel}</span>
+            <input className="detail-input detail-input-year" type="text" value={form.birthYear} onChange={handleInputChange('birthYear')} placeholder="YYYY" maxLength={4} />
+            <span className="detail-unit">{basicInputI18n.yearUnit}</span>
+            <input className="detail-input detail-input-month" type="text" value={form.birthMonth} onChange={handleInputChange('birthMonth')} placeholder="MM" maxLength={2} />
+            <span className="detail-unit">{basicInputI18n.monthUnit}</span>
+            <input className="detail-input detail-input-day" type="text" value={form.birthDay} onChange={handleInputChange('birthDay')} placeholder="DD" maxLength={2} />
+            <span className="detail-unit">{basicInputI18n.dayUnit}</span>
+            <label className="detail-radio">
+              <input type="radio" name="calendarType" value="lunar" checked={form.calendarType === 'lunar'} onChange={handleInputChange('calendarType')} />
+              {basicInputI18n.lunarLabel}
+            </label>
+            <label className="detail-radio">
+              <input type="radio" name="calendarType" value="solar" checked={form.calendarType === 'solar'} onChange={handleInputChange('calendarType')} />
+              {basicInputI18n.solarLabel}
+            </label>
+          </div>
+
+          <div className="detail-form-row">
+            <span className="detail-form-label">{basicInputI18n.birthTimeLabel}</span>
+            <input className="detail-input detail-input-month" type="text" value={form.birthHour} onChange={handleInputChange('birthHour')} placeholder="HH" />
+            <span className="detail-unit">{basicInputI18n.hourUnit}</span>
+            <input className="detail-input detail-input-month" type="text" value={form.birthMinute} onChange={handleInputChange('birthMinute')} placeholder="MM" />
+            <span className="detail-unit">{basicInputI18n.minuteUnit}</span>
+          </div>
+
+          <div className="detail-form-row">
+            <span className="detail-form-label">{basicInputI18n.birthPlaceLabel}</span>
+            <input
+              className="detail-input detail-input-place"
+              type="text"
+              value={form.birthCountry}
+              onChange={handleInputChange('birthCountry')}
+              placeholder={basicInputI18n.countryPlaceholder}
+            />
+            <input className="detail-input detail-input-place" type="text" value={form.birthCity} onChange={handleInputChange('birthCity')} placeholder={basicInputI18n.cityPlaceholder} />
+          </div>
+
+          <div className="detail-form-row">
+            <span className="detail-form-label">{basicInputI18n.genderLabel}</span>
+            <label className="detail-radio">
+              <input type="radio" name="gender" value="male" checked={form.gender === 'male'} onChange={handleInputChange('gender')} />
+              {basicInputI18n.maleLabel}
+            </label>
+            <label className="detail-radio">
+              <input type="radio" name="gender" value="female" checked={form.gender === 'female'} onChange={handleInputChange('gender')} />
+              {basicInputI18n.femaleLabel}
+            </label>
+            <label className="detail-radio">
+              <input type="radio" name="gender" value="private" checked={form.gender === 'private'} onChange={handleInputChange('gender')} />
+              {basicInputI18n.privateLabel}
+            </label>
+          </div>
+
+          <div className="detail-form-row">
+            <span className="detail-form-label">{basicInputI18n.analysisYearLabel}</span>
+            <input className="detail-input detail-input-place" type="text" value={form.analysisYear} onChange={handleInputChange('analysisYear')} placeholder={currentYearNumber} maxLength={4} />
+          </div>
+
+          <div className="detail-form-row">
+            <span className="detail-form-label">{basicInputI18n.concernLabel}</span>
+            <textarea className="detail-input detail-textarea" value={form.concern} onChange={handleInputChange('concern')} placeholder={basicInputI18n.concernPlaceholder} />
+          </div>
+        </section>
+      ) : null}
 
       <section className="prompt-box" aria-label="프롬프트 원문">
         {lines.map((line, index) => (
@@ -1012,7 +1289,7 @@ export default function PromptDetail({ prompt }) {
         ))}
       </section>
 
-      {toastVisible ? <div className="toast">프롬프트를 복사했어요. &#128131;</div> : null}
+      {toastVisible ? <div className="toast">{localeMeta.copiedToast}</div> : null}
     </main>
   );
 }

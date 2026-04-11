@@ -1,0 +1,398 @@
+{
+  "prompt-1": {
+    "ko": {
+      "classification1": "사주",
+      "classification2": "신년운세"
+    },
+    "en": {
+      "classification1": "Four Pillars",
+      "classification2": "New Year"
+    },
+    "zh": {
+      "classification1": "八字",
+      "classification2": "新年运势"
+    },
+    "ja": {
+      "classification1": "四柱推命",
+      "classification2": "新年運勢"
+    }
+  },
+  "prompt-2": {
+    "ko": {
+      "classification1": "사주",
+      "classification2": "배우자운"
+    },
+    "en": {
+      "classification1": "Four Pillars",
+      "classification2": "Marriage"
+    },
+    "zh": {
+      "classification1": "八字",
+      "classification2": "婚姻运"
+    },
+    "ja": {
+      "classification1": "四柱推命",
+      "classification2": "結婚運"
+    }
+  },
+  "prompt-3": {
+    "ko": {
+      "classification1": "사주",
+      "classification2": "재물운"
+    },
+    "en": {
+      "classification1": "Four Pillars",
+      "classification2": "Wealth"
+    },
+    "zh": {
+      "classification1": "八字",
+      "classification2": "财运"
+    },
+    "ja": {
+      "classification1": "四柱推命",
+      "classification2": "金運"
+    }
+  },
+  "prompt-4": {
+    "ko": {
+      "classification1": "사주",
+      "classification2": "건강운"
+    },
+    "en": {
+      "classification1": "Four Pillars",
+      "classification2": "Health"
+    },
+    "zh": {
+      "classification1": "八字",
+      "classification2": "健康运势"
+    },
+    "ja": {
+      "classification1": "四柱推命",
+      "classification2": "健康運"
+    }
+  },
+  "prompt-5": {
+    "ko": {
+      "classification1": "사주",
+      "classification2": "직업운/취업운"
+    },
+    "en": {
+      "classification1": "Four Pillars",
+      "classification2": "Career"
+    },
+    "zh": {
+      "classification1": "八字",
+      "classification2": "事业运"
+    },
+    "ja": {
+      "classification1": "四柱推命",
+      "classification2": "仕事運"
+    }
+  },
+  "prompt-6": {
+    "ko": {
+      "classification1": "사주",
+      "classification2": "연애운"
+    },
+    "en": {
+      "classification1": "Four Pillars",
+      "classification2": "Love"
+    },
+    "zh": {
+      "classification1": "八字",
+      "classification2": "爱情运势"
+    },
+    "ja": {
+      "classification1": "四柱推命",
+      "classification2": "恋愛運"
+    }
+  },
+  "prompt-7": {
+    "ko": {
+      "classification1": "사주",
+      "classification2": "사주 (일반)"
+    },
+    "en": {
+      "classification1": "Four Pillars",
+      "classification2": "General"
+    },
+    "zh": {
+      "classification1": "八字",
+      "classification2": "综合运势"
+    },
+    "ja": {
+      "classification1": "四柱推命",
+      "classification2": "総合運"
+    }
+  },
+  "prompt-8": {
+    "ko": {
+      "classification1": "점성술",
+      "classification2": "점성술 (일반)"
+    },
+    "en": {
+      "classification1": "Astrology",
+      "classification2": "General"
+    },
+    "zh": {
+      "classification1": "占星术",
+      "classification2": "综合"
+    },
+    "ja": {
+      "classification1": "占星術",
+      "classification2": "総合"
+    }
+  },
+  "prompt-9": {
+    "ko": {
+      "classification1": "점성술",
+      "classification2": "배우자운"
+    },
+    "en": {
+      "classification1": "Astrology",
+      "classification2": "Marriage"
+    },
+    "zh": {
+      "classification1": "占星术",
+      "classification2": "婚姻运"
+    },
+    "ja": {
+      "classification1": "占星術",
+      "classification2": "結婚運"
+    }
+  },
+  "prompt-10": {
+    "ko": {
+      "classification1": "점성술",
+      "classification2": "재물운"
+    },
+    "en": {
+      "classification1": "Astrology",
+      "classification2": "Wealth"
+    },
+    "zh": {
+      "classification1": "占星术",
+      "classification2": "财运"
+    },
+    "ja": {
+      "classification1": "占星術",
+      "classification2": "金運"
+    }
+  },
+  "prompt-11": {
+    "ko": {
+      "classification1": "점성술",
+      "classification2": "건강운"
+    },
+    "en": {
+      "classification1": "Astrology",
+      "classification2": "Health"
+    },
+    "zh": {
+      "classification1": "占星术",
+      "classification2": "健康运"
+    },
+    "ja": {
+      "classification1": "占星術",
+      "classification2": "健康運"
+    }
+  },
+  "prompt-12": {
+    "ko": {
+      "classification1": "점성술",
+      "classification2": "직업운/취업운"
+    },
+    "en": {
+      "classification1": "Astrology",
+      "classification2": "Career"
+    },
+    "zh": {
+      "classification1": "占星术",
+      "classification2": "事业运"
+    },
+    "ja": {
+      "classification1": "占星術",
+      "classification2": "仕事運"
+    }
+  },
+  "prompt-13": {
+    "ko": {
+      "classification1": "점성술",
+      "classification2": "연애운"
+    },
+    "en": {
+      "classification1": "Astrology",
+      "classification2": "Love"
+    },
+    "zh": {
+      "classification1": "占星术",
+      "classification2": "爱情运"
+    },
+    "ja": {
+      "classification1": "占星術",
+      "classification2": "恋愛運"
+    }
+  },
+  "prompt-14": {
+    "ko": {
+      "classification1": "풍수지리",
+      "classification2": "풍수지리 (일반)"
+    },
+    "en": {
+      "classification1": "Feng Shui",
+      "classification2": "General"
+    },
+    "zh": {
+      "classification1": "风水综合",
+      "classification2": "风水综合"
+    },
+    "ja": {
+      "classification1": "風水総合",
+      "classification2": "風水総合"
+    }
+  },
+  "prompt-15": {
+    "ko": {
+      "classification1": "풍수지리",
+      "classification2": "풍수지리 (이사)"
+    },
+    "en": {
+      "classification1": "Feng Shui",
+      "classification2": "Moving"
+    },
+    "zh": {
+      "classification1": "风水综合",
+      "classification2": "搬家风水"
+    },
+    "ja": {
+      "classification1": "風水総合",
+      "classification2": "引っ越し風水"
+    }
+  },
+  "prompt-16": {
+    "ko": {
+      "classification1": "관상",
+      "classification2": "얼굴"
+    },
+    "en": {
+      "classification1": "Physiognomy",
+      "classification2": "Face"
+    },
+    "zh": {
+      "classification1": "面相",
+      "classification2": "面相"
+    },
+    "ja": {
+      "classification1": "人相 顔",
+      "classification2": "人相 顔"
+    }
+  },
+  "prompt-17": {
+    "ko": {
+      "classification1": "관상",
+      "classification2": "손금"
+    },
+    "en": {
+      "classification1": "Physiognomy",
+      "classification2": "Palm reading"
+    },
+    "zh": {
+      "classification1": "面相",
+      "classification2": "手相"
+    },
+    "ja": {
+      "classification1": "人相 顔",
+      "classification2": "手相"
+    }
+  },
+  "prompt-18": {
+    "ko": {
+      "classification1": "타로",
+      "classification2": "타로 (일반)"
+    },
+    "en": {
+      "classification1": "Tarot",
+      "classification2": "General"
+    },
+    "zh": {
+      "classification1": "塔罗牌",
+      "classification2": "综合"
+    },
+    "ja": {
+      "classification1": "タロット",
+      "classification2": "総合"
+    }
+  },
+  "prompt-19": {
+    "ko": {
+      "classification1": "타로",
+      "classification2": "배우자운"
+    },
+    "en": {
+      "classification1": "Tarot",
+      "classification2": "Marrige"
+    },
+    "zh": {
+      "classification1": "塔罗牌",
+      "classification2": "婚姻运"
+    },
+    "ja": {
+      "classification1": "タロット",
+      "classification2": "結婚運"
+    }
+  },
+  "prompt-20": {
+    "ko": {
+      "classification1": "타로",
+      "classification2": "재물운"
+    },
+    "en": {
+      "classification1": "Tarot",
+      "classification2": "Wealth"
+    },
+    "zh": {
+      "classification1": "塔罗牌",
+      "classification2": "财运"
+    },
+    "ja": {
+      "classification1": "タロット",
+      "classification2": "金運"
+    }
+  },
+  "prompt-21": {
+    "ko": {
+      "classification1": "타로",
+      "classification2": "직업운/취업운"
+    },
+    "en": {
+      "classification1": "Tarot",
+      "classification2": "Career"
+    },
+    "zh": {
+      "classification1": "塔罗牌",
+      "classification2": "事业运"
+    },
+    "ja": {
+      "classification1": "タロット",
+      "classification2": "仕事運"
+    }
+  },
+  "prompt-22": {
+    "ko": {
+      "classification1": "타로",
+      "classification2": "연애운"
+    },
+    "en": {
+      "classification1": "Tarot",
+      "classification2": "Love"
+    },
+    "zh": {
+      "classification1": "塔罗牌",
+      "classification2": "爱情运"
+    },
+    "ja": {
+      "classification1": "タロット",
+      "classification2": "恋愛運"
+    }
+  }
+}
