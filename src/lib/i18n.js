@@ -11,6 +11,7 @@ const LOCALE_META = {
     listAriaLabel: '프롬프트 목록',
     copyPrompt: '프롬프트 복사',
     copiedToast: '프롬프트를 복사했어요. \u{1F483}',
+    promptBodyAria: '프롬프트 원문',
     langLabel: '한국어',
   },
   en: {
@@ -22,6 +23,7 @@ const LOCALE_META = {
     listAriaLabel: 'Prompt list',
     copyPrompt: 'Copy Prompt',
     copiedToast: 'Prompt copied. \u{1F483}',
+    promptBodyAria: 'Prompt body',
     langLabel: 'English',
   },
   zh: {
@@ -33,6 +35,7 @@ const LOCALE_META = {
     listAriaLabel: '提示词列表',
     copyPrompt: '复制提示词',
     copiedToast: '提示词已复制。\u{1F483}',
+    promptBodyAria: '提示词正文',
     langLabel: '中文',
   },
   ja: {
@@ -44,6 +47,7 @@ const LOCALE_META = {
     listAriaLabel: 'プロンプト一覧',
     copyPrompt: 'プロンプトをコピー',
     copiedToast: 'プロンプトをコピーしました。\u{1F483}',
+    promptBodyAria: 'プロンプト本文',
     langLabel: '日本語',
   },
 };

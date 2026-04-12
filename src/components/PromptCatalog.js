@@ -62,7 +62,7 @@ export default function PromptCatalog({ prompts, categoryMeta, locale = 'ko' }) 
       <section className="card-grid" aria-label={localeMeta.listAriaLabel}>
         {filteredPrompts.map((prompt) => (
           <Link key={prompt.slug} href={`${localePrefix}/prompts/${prompt.slug}`} className="prompt-card">
-            <img className="card-image" src={prompt.imageSrc} alt={prompt.imageAlt} loading="lazy" />
+            <img className="card-image" src={prompt.imageSrc} alt={prompt.displayTitle || prompt.title} loading="lazy" />
             <h2 className="card-title">{prompt.displayTitle || prompt.title}</h2>
             <p className="card-tag">{prompt.tag}</p>
           </Link>

@@ -215,6 +215,8 @@ function getFormLabel(locale, key) {
       '단기/장기': 'Short/Long Term',
       '현재 고민': 'Current Concern',
       '현재 상태': 'Current Status',
+      '상대 존재': 'Partner Presence',
+      '관계 단계': 'Relationship Stage',
       '나이/시기': 'Age/Timing',
       '궁금한 것': 'Question',
       '특정 인물': 'Specific Person',
@@ -247,6 +249,8 @@ function getFormLabel(locale, key) {
       '단기/장기': '短期/长期',
       '현재 고민': '当前困惑',
       '현재 상태': '当前状态',
+      '상대 존재': '是否有对象',
+      '관계 단계': '关系阶段',
       '나이/시기': '年龄/时期',
       '궁금한 것': '想了解的问题',
       '특정 인물': '特定对象',
@@ -279,6 +283,8 @@ function getFormLabel(locale, key) {
       '단기/장기': '短期/長期',
       '현재 고민': '現在の悩み',
       '현재 상태': '現在の状態',
+      '상대 존재': '相手の有無',
+      '관계 단계': '関係段階',
       '나이/시기': '年齢/時期',
       '궁금한 것': '知りたいこと',
       '특정 인물': '特定の相手',
@@ -320,6 +326,8 @@ function localizeHeaderText(text, locale) {
       ['선택 상황:', 'Choice scenario:'],
       ['단기 vs 장기 중 보고 싶은 것:', 'Preferred horizon (short vs long):'],
       ['현재 연애 상황이나 궁금한 점:', 'Current romance situation or question:'],
+      ['현재 연애 상황 또는 배우자 관련 고민:', 'Current romance status or spouse-related concern:'],
+      ['현재 직업/진로 상황이나 고민:', 'Current career situation or concern:'],
       ['현재 상태:', 'Current status:'],
       ['상대 존재:', 'Partner status:'],
       ['관계 단계:', 'Relationship stage:'],
@@ -353,6 +361,80 @@ function localizeHeaderText(text, locale) {
       ['본인의 손금 사진과 함께 입력하세요.', 'Please provide your own palm photo together with the prompt.'],
       ['본인의 이미지와 함께 입력하세요.', 'Please provide your own image together with the prompt.'],
       ['(24시간 기준)', '(24h)'],
+      ['안정', 'Stable'],
+      ['불안정', 'Unstable'],
+      ['적자', 'Deficit'],
+      ['여유 있음', 'Surplus'],
+      ['고정 수입', 'Fixed income'],
+      ['프리랜서', 'Freelancer'],
+      ['투자', 'Investment'],
+      ['없음', 'None'],
+      ['돈이 안 모이는 이유', 'Why money is not accumulating'],
+      ['수입 증가 가능성', 'Possibility of income increase'],
+      ['투자/사업 방향', 'Investment/Business direction'],
+      ['이직 vs 유지', 'Change jobs vs Stay'],
+      ['직접 입력', 'Custom input'],
+      ['단기+장기 모두', 'Both short-term and long-term'],
+      ['단기', 'Short-term'],
+      ['장기', 'Long-term'],
+      ['솔로', 'Single'],
+      ['썸', 'Talking stage'],
+      ['연애 중', 'In a relationship'],
+      ['이별 후', 'After breakup'],
+      ['복잡한 관계', 'Complicated relationship'],
+      ['배우자운 전반', 'Overall spouse fortune'],
+      ['언제 결혼 흐름이 오는지', 'When marriage momentum comes'],
+      ['어떤 사람을 만나게 되는지', 'What kind of person you may meet'],
+      ['현재 만나는 사람이 배우자인지', 'Whether current partner is a spouse match'],
+      ['결혼이 가능한 관계인지', 'Whether this relationship can lead to marriage'],
+      ['상대 속마음', "Partner's true feelings"],
+      ['관계 발전 가능성', 'Relationship growth potential'],
+      ['재회 가능성', 'Possibility of reconciliation'],
+      ['새로운 인연 가능성', 'Possibility of new relationship'],
+      ['고백/관계진전 타이밍', 'Confession/relationship progress timing'],
+      ['주요 고민 직접 입력', 'Enter main concern'],
+      ['선택 입력', 'Enter your choice'],
+      ['이 사람 vs 다른 가능성', 'This person vs another possibility'],
+      ['궁금한 것 직접 입력', 'Enter your question'],
+      ['A회사 vs B회사', 'Company A vs Company B'],
+      ['기타 상황 분야 직접 입력', 'Enter other situation area'],
+      ['예: 썸, 갈등 중, 고민 중', 'e.g., talking stage, in conflict, undecided'],
+      ['예: 나 / 상대 / 여러 명 관계', 'e.g., me / partner / multiple people'],
+      ['예: 상대 심리, 관계 흐름, 선택 고민', 'e.g., partner psychology, relationship flow, choice dilemma'],
+      ['A vs B 형태', 'A vs B format'],
+      ['가능하면 지역 / 방향 / 층수 등', 'If possible: area / direction / floor, etc.'],
+      ['대략적인 구조 or 특징 (예: 바로 방 / 창문 위치 / 화장실 위치 등)', 'Approximate layout or features (e.g., room right away / window location / bathroom location)'],
+      ['예: 이 집 가도 되는지, 현재 집 계속 살아도 되는지, 이사 타이밍, A 집 vs B 집 비교', 'e.g., whether to move into this house, whether to stay, moving timing, House A vs House B'],
+      ['돈 / 건강 / 인간관계 / 안정감 등', 'Money / health / relationships / stability, etc.'],
+      ['예: 서울', 'e.g., Seoul'],
+      ['현관 기준 또는 창 기준 명확히', 'Specify entrance or window as the basis'],
+      ['아파트 / 주택 / 원룸 등', 'Apartment / house / studio, etc.'],
+      ['예: 동향', 'e.g., East-facing'],
+      ['작업공간 방향', 'Workspace direction'],
+      ['자주 머무는 위치', 'Frequent spot'],
+      ['있음', 'Yes'],
+      ['없음', 'No'],
+      ['재직 중', 'Employed'],
+      ['구직 중', 'Job seeking'],
+      ['이직 준비', 'Preparing job change'],
+      ['사업', 'Business'],
+      ['이직 시기', 'Job change timing'],
+      ['합격 가능성', 'Chance of acceptance'],
+      ['직장 내 관계', 'Workplace relationships'],
+      ['수입 상승', 'Income growth'],
+      ['연애', 'Romance'],
+      ['인간관계', 'Relationships'],
+      ['진로', 'Career path'],
+      ['금전', 'Finance'],
+      ['기타', 'Other'],
+      ['거주 중', 'Currently living'],
+      ['이사 고민', 'Considering moving'],
+      ['이미 계약', 'Already contracted'],
+      ['선택 중', 'Choosing'],
+      ['원룸', 'Studio'],
+      ['아파트', 'Apartment'],
+      ['오피스텔', 'Officetel'],
+      ['주택', 'House'],
       ['양력', 'Solar'],
       ['음력', 'Lunar'],
       ['미공개', 'Private'],
@@ -369,6 +451,8 @@ function localizeHeaderText(text, locale) {
       ['선택 상황:', '选择情境:'],
       ['단기 vs 장기 중 보고 싶은 것:', '希望查看（短期/长期）:'],
       ['현재 연애 상황이나 궁금한 점:', '当前恋爱情况或疑问:'],
+      ['현재 연애 상황 또는 배우자 관련 고민:', '当前恋爱状态或配偶相关烦恼:'],
+      ['현재 직업/진로 상황이나 고민:', '当前职业/发展情况或烦恼:'],
       ['현재 상태:', '当前状态:'],
       ['상대 존재:', '是否有对象:'],
       ['관계 단계:', '关系阶段:'],
@@ -402,6 +486,80 @@ function localizeHeaderText(text, locale) {
       ['본인의 손금 사진과 함께 입력하세요.', '请附上本人手相照片一起输入。'],
       ['본인의 이미지와 함께 입력하세요.', '请附上本人图片一起输入。'],
       ['(24시간 기준)', '(24小时制)'],
+      ['안정', '稳定'],
+      ['불안정', '不稳定'],
+      ['적자', '赤字'],
+      ['여유 있음', '有余裕'],
+      ['고정 수입', '固定收入'],
+      ['프리랜서', '自由职业'],
+      ['투자', '投资'],
+      ['없음', '无'],
+      ['돈이 안 모이는 이유', '钱存不下来的原因'],
+      ['수입 증가 가능성', '收入增长可能性'],
+      ['투자/사업 방향', '投资/事业方向'],
+      ['이직 vs 유지', '跳槽 vs 维持'],
+      ['직접 입력', '直接输入'],
+      ['단기+장기 모두', '短期+长期都'],
+      ['단기', '短期'],
+      ['장기', '长期'],
+      ['솔로', '单身'],
+      ['썸', '暧昧期'],
+      ['연애 중', '恋爱中'],
+      ['이별 후', '分手后'],
+      ['복잡한 관계', '复杂关系'],
+      ['배우자운 전반', '配偶运总体'],
+      ['언제 결혼 흐름이 오는지', '何时出现结婚趋势'],
+      ['어떤 사람을 만나게 되는지', '会遇到怎样的人'],
+      ['현재 만나는 사람이 배우자인지', '当前对象是否适合成为配偶'],
+      ['결혼이 가능한 관계인지', '是否是可结婚的关系'],
+      ['상대 속마음', '对方真实想法'],
+      ['관계 발전 가능성', '关系发展可能性'],
+      ['재회 가능성', '复合可能性'],
+      ['새로운 인연 가능성', '新缘分可能性'],
+      ['고백/관계진전 타이밍', '告白/关系推进时机'],
+      ['주요 고민 직접 입력', '直接输入主要困惑'],
+      ['선택 입력', '输入选项'],
+      ['이 사람 vs 다른 가능성', '此人 vs 其他可能性'],
+      ['궁금한 것 직접 입력', '直接输入问题'],
+      ['A회사 vs B회사', 'A公司 vs B公司'],
+      ['기타 상황 분야 직접 입력', '直接输入其他问题领域'],
+      ['예: 썸, 갈등 중, 고민 중', '例如：暧昧期、冲突中、犹豫中'],
+      ['예: 나 / 상대 / 여러 명 관계', '例如：我 / 对方 / 多人关系'],
+      ['예: 상대 심리, 관계 흐름, 선택 고민', '例如：对方心理、关系走势、选择困惑'],
+      ['A vs B 형태', 'A vs B 形式'],
+      ['가능하면 지역 / 방향 / 층수 등', '尽量填写地区 / 朝向 / 楼层等'],
+      ['대략적인 구조 or 특징 (예: 바로 방 / 창문 위치 / 화장실 위치 등)', '大致结构或特点（例如：进门就是房间 / 窗户位置 / 卫生间位置等）'],
+      ['예: 이 집 가도 되는지, 현재 집 계속 살아도 되는지, 이사 타이밍, A 집 vs B 집 비교', '例如：是否适合搬到这套房、是否继续住现在的房、搬家时机、A房 vs B房比较'],
+      ['돈 / 건강 / 인간관계 / 안정감 등', '金钱 / 健康 / 人际关系 / 安定感等'],
+      ['예: 서울', '例如：首尔'],
+      ['현관 기준 또는 창 기준 명확히', '请明确以玄关或窗户为基准'],
+      ['아파트 / 주택 / 원룸 등', '公寓 / 住宅 / 单间等'],
+      ['예: 동향', '例如：朝东'],
+      ['작업공간 방향', '工作空间朝向'],
+      ['자주 머무는 위치', '经常停留的位置'],
+      ['있음', '有'],
+      ['없음', '无'],
+      ['재직 중', '在职中'],
+      ['구직 중', '求职中'],
+      ['이직 준비', '准备跳槽'],
+      ['사업', '创业'],
+      ['이직 시기', '跳槽时机'],
+      ['합격 가능성', '录取可能性'],
+      ['직장 내 관계', '职场人际关系'],
+      ['수입 상승', '收入上升'],
+      ['연애', '恋爱'],
+      ['인간관계', '人际关系'],
+      ['진로', '职业方向'],
+      ['금전', '金钱'],
+      ['기타', '其他'],
+      ['거주 중', '居住中'],
+      ['이사 고민', '考虑搬家'],
+      ['이미 계약', '已签约'],
+      ['선택 중', '选择中'],
+      ['원룸', '单间'],
+      ['아파트', '公寓'],
+      ['오피스텔', '商住公寓'],
+      ['주택', '住宅'],
       ['양력', '阳历'],
       ['음력', '农历'],
       ['미공개', '不公开'],
@@ -418,6 +576,8 @@ function localizeHeaderText(text, locale) {
       ['선택 상황:', '選択状況:'],
       ['단기 vs 장기 중 보고 싶은 것:', '短期/長期の希望:'],
       ['현재 연애 상황이나 궁금한 점:', '現在の恋愛状況や質問:'],
+      ['현재 연애 상황 또는 배우자 관련 고민:', '現在の恋愛状況または配偶者に関する悩み:'],
+      ['현재 직업/진로 상황이나 고민:', '現在の仕事/進路状況や悩み:'],
       ['현재 상태:', '現在の状態:'],
       ['상대 존재:', '相手の有無:'],
       ['관계 단계:', '関係の段階:'],
@@ -451,6 +611,80 @@ function localizeHeaderText(text, locale) {
       ['본인의 손금 사진과 함께 입력하세요.', 'ご本人の手相写真を一緒に入力してください。'],
       ['본인의 이미지와 함께 입력하세요.', 'ご本人の画像を一緒に入力してください。'],
       ['(24시간 기준)', '(24時間制)'],
+      ['안정', '安定'],
+      ['불안정', '不安定'],
+      ['적자', '赤字'],
+      ['여유 있음', '余裕あり'],
+      ['고정 수입', '固定収入'],
+      ['프리랜서', 'フリーランス'],
+      ['투자', '投資'],
+      ['없음', 'なし'],
+      ['돈이 안 모이는 이유', 'お金が貯まらない理由'],
+      ['수입 증가 가능성', '収入増加の可能性'],
+      ['투자/사업 방향', '投資/事業の方向性'],
+      ['이직 vs 유지', '転職 vs 維持'],
+      ['직접 입력', '直接入力'],
+      ['단기+장기 모두', '短期+長期の両方'],
+      ['단기', '短期'],
+      ['장기', '長期'],
+      ['솔로', 'シングル'],
+      ['썸', '曖昧な関係'],
+      ['연애 중', '交際中'],
+      ['이별 후', '別れた後'],
+      ['복잡한 관계', '複雑な関係'],
+      ['배우자운 전반', '配偶者運全般'],
+      ['언제 결혼 흐름이 오는지', '結婚の流れがいつ来るか'],
+      ['어떤 사람을 만나게 되는지', 'どんな人と出会うか'],
+      ['현재 만나는 사람이 배우자인지', '今の相手が配偶者になる可能性'],
+      ['결혼이 가능한 관계인지', '結婚可能な関係か'],
+      ['상대 속마음', '相手の本音'],
+      ['관계 발전 가능성', '関係発展の可能性'],
+      ['재회 가능성', '復縁の可能性'],
+      ['새로운 인연 가능성', '新しい縁の可能性'],
+      ['고백/관계진전 타이밍', '告白/関係進展のタイミング'],
+      ['주요 고민 직접 입력', '主な悩みを直接入力'],
+      ['선택 입력', '入力'],
+      ['이 사람 vs 다른 가능성', 'この人 vs 他の可能性'],
+      ['궁금한 것 직접 입력', '知りたいことを直接入力'],
+      ['A회사 vs B회사', 'A社 vs B社'],
+      ['기타 상황 분야 직접 입력', 'その他の状況分野を直接入力'],
+      ['예: 썸, 갈등 중, 고민 중', '例：曖昧な関係、対立中、悩み中'],
+      ['예: 나 / 상대 / 여러 명 관계', '例：自分 / 相手 / 複数人の関係'],
+      ['예: 상대 심리, 관계 흐름, 선택 고민', '例：相手の心理、関係の流れ、選択の悩み'],
+      ['A vs B 형태', 'A vs B 形式'],
+      ['가능하면 지역 / 방향 / 층수 등', '可能なら地域 / 方角 / 階数など'],
+      ['대략적인 구조 or 특징 (예: 바로 방 / 창문 위치 / 화장실 위치 등)', 'おおよその間取りや特徴（例：すぐ部屋 / 窓の位置 / トイレの位置など）'],
+      ['예: 이 집 가도 되는지, 현재 집 계속 살아도 되는지, 이사 타이밍, A 집 vs B 집 비교', '例：この家に住んでよいか、今の家に住み続けるべきか、引っ越し時期、A物件 vs B物件比較'],
+      ['돈 / 건강 / 인간관계 / 안정감 등', 'お金 / 健康 / 人間関係 / 安定感 など'],
+      ['예: 서울', '例：ソウル'],
+      ['현관 기준 또는 창 기준 명확히', '玄関基準か窓基準かを明確に'],
+      ['아파트 / 주택 / 원룸 등', 'アパート / 住宅 / ワンルーム など'],
+      ['예: 동향', '例：東向き'],
+      ['작업공간 방향', '作業空間の方角'],
+      ['자주 머무는 위치', 'よくいる場所'],
+      ['있음', 'あり'],
+      ['없음', 'なし'],
+      ['재직 중', '在職中'],
+      ['구직 중', '求職中'],
+      ['이직 준비', '転職準備中'],
+      ['사업', '事業'],
+      ['이직 시기', '転職の時期'],
+      ['합격 가능성', '合格可能性'],
+      ['직장 내 관계', '職場内の人間関係'],
+      ['수입 상승', '収入上昇'],
+      ['연애', '恋愛'],
+      ['인간관계', '人間関係'],
+      ['진로', '進路'],
+      ['금전', '金銭'],
+      ['기타', 'その他'],
+      ['거주 중', '居住中'],
+      ['이사 고민', '引っ越し検討中'],
+      ['이미 계약', '契約済み'],
+      ['선택 중', '選択中'],
+      ['원룸', 'ワンルーム'],
+      ['아파트', 'アパート'],
+      ['오피스텔', 'オフィステル'],
+      ['주택', '住宅'],
       ['양력', '新暦'],
       ['음력', '旧暦'],
       ['미공개', '非公開'],
@@ -595,6 +829,72 @@ function buildBasicHeader(form) {
 
   if (hasValue(concern)) {
     lines.push(`현재 상황/궁금한 점: ${concern}`);
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function buildBasicHeaderByLocale(form, locale) {
+  if (locale === 'ko') return buildBasicHeader(form);
+
+  const i18n = getBasicInputI18n(locale);
+  const calendarLabel = form.calendarType === 'lunar' ? i18n.lunarLabel : i18n.solarLabel;
+  const genderLabel =
+    form.gender === 'male' ? i18n.maleLabel : form.gender === 'female' ? i18n.femaleLabel : form.gender === 'private' ? i18n.privateLabel : '';
+  const year = String(form.birthYear || '').trim();
+  const month = String(form.birthMonth || '').trim();
+  const day = String(form.birthDay || '').trim();
+  const hour = String(form.birthHour || '').trim();
+  const minute = String(form.birthMinute || '').trim();
+  const country = String(form.birthCountry || '').trim();
+  const city = String(form.birthCity || '').trim();
+  const { yearNumber } = resolveAnalysisYear(form.analysisYear);
+  const concern = String(form.concern || '').trim();
+
+  const lines = [i18n.headerUserInput, ''];
+
+  if (hasValue(year) || hasValue(month) || hasValue(day)) {
+    if (locale === 'en') {
+      const yyyy = hasValue(year) ? year : 'YYYY';
+      const mm = hasValue(month) ? month.padStart(2, '0') : 'MM';
+      const dd = hasValue(day) ? day.padStart(2, '0') : 'DD';
+      lines.push(`${i18n.headerBirthDate}: ${yyyy}-${mm}-${dd} (${calendarLabel})`);
+    } else {
+      const dateParts = [];
+      if (hasValue(year)) dateParts.push(`${year}${i18n.yearUnit}`);
+      if (hasValue(month)) dateParts.push(`${month}${i18n.monthUnit}`);
+      if (hasValue(day)) dateParts.push(`${day}${i18n.dayUnit}`);
+      lines.push(`${i18n.headerBirthDate}: ${dateParts.join(' ')} (${calendarLabel})`);
+    }
+  }
+
+  if (hasValue(hour) || hasValue(minute)) {
+    if (locale === 'en') {
+      const hh = hasValue(hour) ? hour.padStart(2, '0') : '00';
+      const mm = hasValue(minute) ? minute.padStart(2, '0') : '00';
+      lines.push(`${i18n.headerBirthTime}: ${hh}:${mm} (24h)`);
+    } else {
+      const timeParts = [];
+      if (hasValue(hour)) timeParts.push(`${hour}${i18n.hourUnit}`);
+      if (hasValue(minute)) timeParts.push(`${minute}${i18n.minuteUnit}`);
+      lines.push(`${i18n.headerBirthTime}: ${timeParts.join(' ')} (24h)`);
+    }
+  }
+
+  if (hasValue(country) || hasValue(city)) {
+    lines.push(`${i18n.headerBirthPlace}: ${[country, city].filter(hasValue).join(' ')}`);
+  }
+
+  if (hasValue(genderLabel)) {
+    lines.push(`${i18n.headerGender}: ${genderLabel}`);
+  }
+
+  const analysisYearValue = locale === 'en' ? yearNumber : `${yearNumber}${i18n.yearUnit}`;
+  lines.push(`${i18n.headerAnalysisYear}: ${analysisYearValue}`);
+
+  if (hasValue(concern)) {
+    lines.push(`${i18n.headerConcern}: ${concern}`);
   }
 
   lines.push('');
@@ -902,6 +1202,9 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
   const lines = useMemo(() => promptBodyForDisplay.split('\n'), [promptBodyForDisplay]);
   const currentYearNumber = useMemo(() => String(getCurrentYearNumber()), []);
   const formLabel = (key) => getFormLabel(locale, key);
+  const uiText = (text) => (locale === 'ko' ? text : localizeHeaderText(text, locale));
+  const selectOptionLabel = locale === 'en' ? 'Select' : locale === 'zh' ? '选择' : locale === 'ja' ? '選択' : '선택';
+  const koBirthLabelClassName = locale === 'ko' ? 'detail-form-label detail-form-label-ko-nowrap' : 'detail-form-label';
 
   const handleCopy = async () => {
     const koHeader =
@@ -912,7 +1215,12 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
           : isPhysiognomy
             ? `${physiognomyGuide}\n\n`
             : buildBasicHeader(form);
-    const header = locale === 'ko' ? koHeader : localizeHeaderText(koHeader, locale);
+    const header =
+      prompt.category === 'tarot' || prompt.category === 'fengshui' || isPhysiognomy
+        ? locale === 'ko'
+          ? koHeader
+          : localizeHeaderText(koHeader, locale)
+        : buildBasicHeaderByLocale(form, locale);
     const body =
       locale === 'ko'
         ? prompt.category === 'tarot' || prompt.category === 'fengshui' || isPhysiognomy
@@ -961,38 +1269,38 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   className="detail-input detail-textarea"
                   value={tarotForm.currentMoneySituation}
                   onChange={handleTarotInputChange('currentMoneySituation')}
-                  placeholder="현재 돈 상황이나 고민"
+                  placeholder={uiText('현재 돈 상황이나 고민')}
                 />
               </div>
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('재정 상태')}</span>
                 <select className="detail-input detail-select" value={tarotForm.financialStatus} onChange={handleTarotInputChange('financialStatus')}>
-                  <option value="">선택</option>
-                  <option value="안정">안정</option>
-                  <option value="불안정">불안정</option>
-                  <option value="적자">적자</option>
-                  <option value="여유 있음">여유 있음</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="안정">{uiText('안정')}</option>
+                  <option value="불안정">{uiText('불안정')}</option>
+                  <option value="적자">{uiText('적자')}</option>
+                  <option value="여유 있음">{uiText('여유 있음')}</option>
                 </select>
               </div>
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('수입 형태')}</span>
                 <select className="detail-input detail-select" value={tarotForm.incomeType} onChange={handleTarotInputChange('incomeType')}>
-                  <option value="">선택</option>
-                  <option value="고정 수입">고정 수입</option>
-                  <option value="프리랜서">프리랜서</option>
-                  <option value="투자">투자</option>
-                  <option value="없음">없음</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="고정 수입">{uiText('고정 수입')}</option>
+                  <option value="프리랜서">{uiText('프리랜서')}</option>
+                  <option value="투자">{uiText('투자')}</option>
+                  <option value="없음">{uiText('없음')}</option>
                 </select>
               </div>
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('주요 고민')}</span>
                 <select className="detail-input detail-select" value={tarotForm.mainConcern} onChange={handleTarotInputChange('mainConcern')}>
-                  <option value="">선택</option>
-                  <option value="돈이 안 모이는 이유">돈이 안 모이는 이유</option>
-                  <option value="수입 증가 가능성">수입 증가 가능성</option>
-                  <option value="투자/사업 방향">투자/사업 방향</option>
-                  <option value="이직 vs 유지">이직 vs 유지</option>
-                  <option value="직접 입력">직접 입력</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="돈이 안 모이는 이유">{uiText('돈이 안 모이는 이유')}</option>
+                  <option value="수입 증가 가능성">{uiText('수입 증가 가능성')}</option>
+                  <option value="투자/사업 방향">{uiText('투자/사업 방향')}</option>
+                  <option value="이직 vs 유지">{uiText('이직 vs 유지')}</option>
+                  <option value="직접 입력">{uiText('직접 입력')}</option>
                 </select>
                 {tarotForm.mainConcern === '직접 입력' ? (
                   <input
@@ -1000,7 +1308,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                     type="text"
                     value={tarotForm.mainConcernCustom}
                     onChange={handleTarotInputChange('mainConcernCustom')}
-                    placeholder="주요 고민 직접 입력"
+                    placeholder={uiText('주요 고민 직접 입력')}
                   />
                 ) : null}
               </div>
@@ -1021,11 +1329,73 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   value={tarotForm.timeHorizon}
                   onChange={handleTarotInputChange('timeHorizon')}
                 >
-                  <option value="">선택</option>
-                  <option value="단기">단기</option>
-                  <option value="장기">장기</option>
-                  <option value="단기+장기 모두">단기+장기 모두</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="단기">{uiText('단기')}</option>
+                  <option value="장기">{uiText('장기')}</option>
+                  <option value="단기+장기 모두">{uiText('단기+장기 모두')}</option>
                 </select>
+              </div>
+            </>
+          ) : tarotType === 'love' ? (
+            <>
+              <div className="detail-form-row">
+                <span className="detail-form-label">{formLabel('현재 고민')}</span>
+                <textarea
+                  className="detail-input detail-textarea"
+                  value={tarotForm.currentSituation}
+                  onChange={handleTarotInputChange('currentSituation')}
+                  placeholder={uiText('현재 연애 상황이나 궁금한 점')}
+                />
+              </div>
+              <div className="detail-form-row">
+                <span className="detail-form-label">{formLabel('현재 상태')}</span>
+                <select className="detail-input detail-select" value={tarotForm.status} onChange={handleTarotInputChange('status')}>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="솔로">{uiText('솔로')}</option>
+                  <option value="썸">{uiText('썸')}</option>
+                  <option value="연애 중">{uiText('연애 중')}</option>
+                  <option value="이별 후">{uiText('이별 후')}</option>
+                  <option value="복잡한 관계">{uiText('복잡한 관계')}</option>
+                </select>
+              </div>
+              <div className="detail-form-row">
+                <span className="detail-form-label">{formLabel('상대 존재')}</span>
+                <select className="detail-input detail-select" value={tarotForm.hasPartner} onChange={handleTarotInputChange('hasPartner')}>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="있음">{uiText('있음')}</option>
+                  <option value="없음">{uiText('없음')}</option>
+                </select>
+              </div>
+              <div className="detail-form-row">
+                <span className="detail-form-label">{formLabel('관계 단계')}</span>
+                <select className="detail-input detail-select" value={tarotForm.relationshipStage} onChange={handleTarotInputChange('relationshipStage')}>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="썸">{uiText('썸')}</option>
+                  <option value="연애 중">{uiText('연애 중')}</option>
+                  <option value="이별 후">{uiText('이별 후')}</option>
+                  <option value="복잡한 관계">{uiText('복잡한 관계')}</option>
+                </select>
+              </div>
+              <div className="detail-form-row">
+                <span className="detail-form-label">{formLabel('궁금한 것')}</span>
+                <select className="detail-input detail-select" value={tarotForm.questionType} onChange={handleTarotInputChange('questionType')}>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="상대 속마음">{uiText('상대 속마음')}</option>
+                  <option value="관계 발전 가능성">{uiText('관계 발전 가능성')}</option>
+                  <option value="재회 가능성">{uiText('재회 가능성')}</option>
+                  <option value="새로운 인연 가능성">{uiText('새로운 인연 가능성')}</option>
+                  <option value="고백/관계진전 타이밍">{uiText('고백/관계진전 타이밍')}</option>
+                </select>
+              </div>
+              <div className="detail-form-row">
+                <span className="detail-form-label">{formLabel('선택 상황')}</span>
+                <input
+                  className="detail-input detail-input-long"
+                  type="text"
+                  value={tarotForm.choiceSituation}
+                  onChange={handleTarotInputChange('choiceSituation')}
+                  placeholder="A vs B"
+                />
               </div>
             </>
           ) : tarotType === 'spouse' ? (
@@ -1036,18 +1406,18 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   className="detail-input detail-textarea"
                   value={tarotForm.spouseConcern}
                   onChange={handleTarotInputChange('spouseConcern')}
-                  placeholder="현재 연애 상황 또는 배우자 관련 고민"
+                  placeholder={uiText('현재 연애 상황 또는 배우자 관련 고민')}
                 />
               </div>
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('현재 상태')}</span>
                 <select className="detail-input detail-select" value={tarotForm.status} onChange={handleTarotInputChange('status')}>
-                  <option value="">선택</option>
-                  <option value="솔로">솔로</option>
-                  <option value="썸">썸</option>
-                  <option value="연애 중">연애 중</option>
-                  <option value="이별 후">이별 후</option>
-                  <option value="복잡한 관계">복잡한 관계</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="솔로">{uiText('솔로')}</option>
+                  <option value="썸">{uiText('썸')}</option>
+                  <option value="연애 중">{uiText('연애 중')}</option>
+                  <option value="이별 후">{uiText('이별 후')}</option>
+                  <option value="복잡한 관계">{uiText('복잡한 관계')}</option>
                 </select>
               </div>
               <div className="detail-form-row">
@@ -1057,26 +1427,26 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={tarotForm.agePeriod}
                   onChange={handleTarotInputChange('agePeriod')}
-                  placeholder="선택 입력"
+                  placeholder={uiText('선택 입력')}
                 />
               </div>
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('궁금한 것')}</span>
                 <select className="detail-input detail-select" value={tarotForm.spouseQuestion} onChange={handleTarotInputChange('spouseQuestion')}>
-                  <option value="">선택</option>
-                  <option value="배우자운 전반">배우자운 전반</option>
-                  <option value="언제 결혼 흐름이 오는지">언제 결혼 흐름이 오는지</option>
-                  <option value="어떤 사람을 만나게 되는지">어떤 사람을 만나게 되는지</option>
-                  <option value="현재 만나는 사람이 배우자인지">현재 만나는 사람이 배우자인지</option>
-                  <option value="결혼이 가능한 관계인지">결혼이 가능한 관계인지</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="배우자운 전반">{uiText('배우자운 전반')}</option>
+                  <option value="언제 결혼 흐름이 오는지">{uiText('언제 결혼 흐름이 오는지')}</option>
+                  <option value="어떤 사람을 만나게 되는지">{uiText('어떤 사람을 만나게 되는지')}</option>
+                  <option value="현재 만나는 사람이 배우자인지">{uiText('현재 만나는 사람이 배우자인지')}</option>
+                  <option value="결혼이 가능한 관계인지">{uiText('결혼이 가능한 관계인지')}</option>
                 </select>
               </div>
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('특정 인물')}</span>
                 <select className="detail-input detail-select" value={tarotForm.specificPerson} onChange={handleTarotInputChange('specificPerson')}>
-                  <option value="">선택</option>
-                  <option value="있음">있음</option>
-                  <option value="없음">없음</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="있음">{uiText('있음')}</option>
+                  <option value="없음">{uiText('없음')}</option>
                 </select>
               </div>
               <div className="detail-form-row">
@@ -1086,7 +1456,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={tarotForm.choiceSituation}
                   onChange={handleTarotInputChange('choiceSituation')}
-                  placeholder="이 사람 vs 다른 가능성"
+                  placeholder={uiText('이 사람 vs 다른 가능성')}
                 />
               </div>
             </>
@@ -1098,29 +1468,29 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   className="detail-input detail-textarea"
                   value={tarotForm.careerSituation}
                   onChange={handleTarotInputChange('careerSituation')}
-                  placeholder="현재 직업/진로 상황이나 고민"
+                  placeholder={uiText('현재 직업/진로 상황이나 고민')}
                 />
               </div>
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('상태')}</span>
                 <select className="detail-input detail-select" value={tarotForm.careerStatus} onChange={handleTarotInputChange('careerStatus')}>
-                  <option value="">선택</option>
-                  <option value="재직 중">재직 중</option>
-                  <option value="구직 중">구직 중</option>
-                  <option value="이직 준비">이직 준비</option>
-                  <option value="프리랜서">프리랜서</option>
-                  <option value="사업">사업</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="재직 중">{uiText('재직 중')}</option>
+                  <option value="구직 중">{uiText('구직 중')}</option>
+                  <option value="이직 준비">{uiText('이직 준비')}</option>
+                  <option value="프리랜서">{uiText('프리랜서')}</option>
+                  <option value="사업">{uiText('사업')}</option>
                 </select>
               </div>
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('궁금한 것')}</span>
                 <select className="detail-input detail-select" value={tarotForm.careerQuestion} onChange={handleTarotInputChange('careerQuestion')}>
-                  <option value="">선택</option>
-                  <option value="이직 시기">이직 시기</option>
-                  <option value="합격 가능성">합격 가능성</option>
-                  <option value="직장 내 관계">직장 내 관계</option>
-                  <option value="수입 상승">수입 상승</option>
-                  <option value="직접 입력">직접 입력</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="이직 시기">{uiText('이직 시기')}</option>
+                  <option value="합격 가능성">{uiText('합격 가능성')}</option>
+                  <option value="직장 내 관계">{uiText('직장 내 관계')}</option>
+                  <option value="수입 상승">{uiText('수입 상승')}</option>
+                  <option value="직접 입력">{uiText('직접 입력')}</option>
                 </select>
                 {tarotForm.careerQuestion === '직접 입력' ? (
                   <input
@@ -1128,7 +1498,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                     type="text"
                     value={tarotForm.careerQuestionCustom}
                     onChange={handleTarotInputChange('careerQuestionCustom')}
-                    placeholder="궁금한 것 직접 입력"
+                    placeholder={uiText('궁금한 것 직접 입력')}
                   />
                 ) : null}
               </div>
@@ -1139,7 +1509,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={tarotForm.choiceSituation}
                   onChange={handleTarotInputChange('choiceSituation')}
-                  placeholder="A회사 vs B회사"
+                  placeholder={uiText('A회사 vs B회사')}
                 />
               </div>
               <div className="detail-form-row">
@@ -1149,10 +1519,10 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   value={tarotForm.timeHorizon}
                   onChange={handleTarotInputChange('timeHorizon')}
                 >
-                  <option value="">선택</option>
-                  <option value="단기">단기</option>
-                  <option value="장기">장기</option>
-                  <option value="단기+장기 모두">단기+장기 모두</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="단기">{uiText('단기')}</option>
+                  <option value="장기">{uiText('장기')}</option>
+                  <option value="단기+장기 모두">{uiText('단기+장기 모두')}</option>
                 </select>
               </div>
             </>
@@ -1161,12 +1531,12 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('상황 분야')}</span>
                 <select className="detail-input detail-select" value={tarotForm.genericSituationArea} onChange={handleTarotInputChange('genericSituationArea')}>
-                  <option value="">선택</option>
-                  <option value="연애">연애</option>
-                  <option value="인간관계">인간관계</option>
-                  <option value="진로">진로</option>
-                  <option value="금전">금전</option>
-                  <option value="기타">기타</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="연애">{uiText('연애')}</option>
+                  <option value="인간관계">{uiText('인간관계')}</option>
+                  <option value="진로">{uiText('진로')}</option>
+                  <option value="금전">{uiText('금전')}</option>
+                  <option value="기타">{uiText('기타')}</option>
                 </select>
                 {tarotForm.genericSituationArea === '기타' ? (
                   <input
@@ -1174,7 +1544,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                     type="text"
                     value={tarotForm.genericSituationAreaCustom}
                     onChange={handleTarotInputChange('genericSituationAreaCustom')}
-                    placeholder="기타 상황 분야 직접 입력"
+                    placeholder={uiText('기타 상황 분야 직접 입력')}
                   />
                 ) : null}
               </div>
@@ -1185,7 +1555,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={tarotForm.genericCurrentStatus}
                   onChange={handleTarotInputChange('genericCurrentStatus')}
-                  placeholder="예: 썸, 갈등 중, 고민 중"
+                  placeholder={uiText('예: 썸, 갈등 중, 고민 중')}
                 />
               </div>
               <div className="detail-form-row">
@@ -1195,7 +1565,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={tarotForm.genericRelatedPeople}
                   onChange={handleTarotInputChange('genericRelatedPeople')}
-                  placeholder="예: 나 / 상대 / 여러 명 관계"
+                  placeholder={uiText('예: 나 / 상대 / 여러 명 관계')}
                 />
               </div>
               <div className="detail-form-row">
@@ -1205,7 +1575,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={tarotForm.genericQuestionPoint}
                   onChange={handleTarotInputChange('genericQuestionPoint')}
-                  placeholder="예: 상대 심리, 관계 흐름, 선택 고민"
+                  placeholder={uiText('예: 상대 심리, 관계 흐름, 선택 고민')}
                 />
               </div>
               <div className="detail-form-row">
@@ -1215,7 +1585,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={tarotForm.genericChoiceSituation}
                   onChange={handleTarotInputChange('genericChoiceSituation')}
-                  placeholder="A vs B 형태"
+                  placeholder={uiText('A vs B 형태')}
                 />
               </div>
             </>
@@ -1228,22 +1598,22 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('현재 상태')}</span>
                 <select className="detail-input detail-select" value={fengshuiForm.moveStatus} onChange={handleFengshuiInputChange('moveStatus')}>
-                  <option value="">선택</option>
-                  <option value="거주 중">거주 중</option>
-                  <option value="이사 고민">이사 고민</option>
-                  <option value="이미 계약">이미 계약</option>
-                  <option value="선택 중">선택 중</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="거주 중">{uiText('거주 중')}</option>
+                  <option value="이사 고민">{uiText('이사 고민')}</option>
+                  <option value="이미 계약">{uiText('이미 계약')}</option>
+                  <option value="선택 중">{uiText('선택 중')}</option>
                 </select>
               </div>
 
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('집 유형')}</span>
                 <select className="detail-input detail-select" value={fengshuiForm.moveHomeType} onChange={handleFengshuiInputChange('moveHomeType')}>
-                  <option value="">선택</option>
-                  <option value="원룸">원룸</option>
-                  <option value="아파트">아파트</option>
-                  <option value="오피스텔">오피스텔</option>
-                  <option value="주택">주택</option>
+                  <option value="">{selectOptionLabel}</option>
+                  <option value="원룸">{uiText('원룸')}</option>
+                  <option value="아파트">{uiText('아파트')}</option>
+                  <option value="오피스텔">{uiText('오피스텔')}</option>
+                  <option value="주택">{uiText('주택')}</option>
                 </select>
               </div>
 
@@ -1254,7 +1624,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={fengshuiForm.moveLocationInfo}
                   onChange={handleFengshuiInputChange('moveLocationInfo')}
-                  placeholder="가능하면 지역 / 방향 / 층수 등"
+                  placeholder={uiText('가능하면 지역 / 방향 / 층수 등')}
                 />
               </div>
 
@@ -1264,7 +1634,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   className="detail-input detail-textarea"
                   value={fengshuiForm.moveHomeStructure}
                   onChange={handleFengshuiInputChange('moveHomeStructure')}
-                  placeholder="대략적인 구조 or 특징 (예: 바로 방 / 창문 위치 / 화장실 위치 등)"
+                  placeholder={uiText('대략적인 구조 or 특징 (예: 바로 방 / 창문 위치 / 화장실 위치 등)')}
                 />
               </div>
 
@@ -1274,7 +1644,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   className="detail-input detail-textarea"
                   value={fengshuiForm.moveConcern}
                   onChange={handleFengshuiInputChange('moveConcern')}
-                  placeholder="예: 이 집 가도 되는지, 현재 집 계속 살아도 되는지, 이사 타이밍, A 집 vs B 집 비교"
+                  placeholder={uiText('예: 이 집 가도 되는지, 현재 집 계속 살아도 되는지, 이사 타이밍, A 집 vs B 집 비교')}
                 />
               </div>
 
@@ -1285,7 +1655,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={fengshuiForm.movePriority}
                   onChange={handleFengshuiInputChange('movePriority')}
-                  placeholder="돈 / 건강 / 인간관계 / 안정감 등"
+                  placeholder={uiText('돈 / 건강 / 인간관계 / 안정감 등')}
                 />
               </div>
             </>
@@ -1293,7 +1663,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
             <>
               <div className="detail-form-row">
                 <span className="detail-form-label">{formLabel('도시')}</span>
-                <input className="detail-input detail-input-long" type="text" value={fengshuiForm.city} onChange={handleFengshuiInputChange('city')} placeholder="예: 서울" />
+                <input className="detail-input detail-input-long" type="text" value={fengshuiForm.city} onChange={handleFengshuiInputChange('city')} placeholder={uiText('예: 서울')} />
               </div>
 
               <div className="detail-form-row">
@@ -1303,7 +1673,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={fengshuiForm.homeDirection}
                   onChange={handleFengshuiInputChange('homeDirection')}
-                  placeholder="현관 기준 또는 창 기준 명확히"
+                  placeholder={uiText('현관 기준 또는 창 기준 명확히')}
                 />
               </div>
 
@@ -1314,7 +1684,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={fengshuiForm.homeType}
                   onChange={handleFengshuiInputChange('homeType')}
-                  placeholder="아파트 / 주택 / 원룸 등"
+                  placeholder={uiText('아파트 / 주택 / 원룸 등')}
                 />
               </div>
 
@@ -1325,7 +1695,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={fengshuiForm.bedroomDirection}
                   onChange={handleFengshuiInputChange('bedroomDirection')}
-                  placeholder="예: 동향"
+                  placeholder={uiText('예: 동향')}
                 />
               </div>
 
@@ -1336,7 +1706,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={fengshuiForm.workspaceDirection}
                   onChange={handleFengshuiInputChange('workspaceDirection')}
-                  placeholder="작업공간 방향"
+                  placeholder={uiText('작업공간 방향')}
                 />
               </div>
 
@@ -1347,7 +1717,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
                   type="text"
                   value={fengshuiForm.stayingPosition}
                   onChange={handleFengshuiInputChange('stayingPosition')}
-                  placeholder="자주 머무는 위치"
+                  placeholder={uiText('자주 머무는 위치')}
                 />
               </div>
             </>
@@ -1378,7 +1748,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
           </div>
 
           <div className="detail-form-row">
-            <span className="detail-form-label">{basicInputI18n.birthTimeLabel}</span>
+            <span className={koBirthLabelClassName}>{basicInputI18n.birthTimeLabel}</span>
             <input className="detail-input detail-input-month" type="text" value={form.birthHour} onChange={handleInputChange('birthHour')} placeholder="HH" />
             <span className="detail-unit">{basicInputI18n.hourUnit}</span>
             <input className="detail-input detail-input-month" type="text" value={form.birthMinute} onChange={handleInputChange('birthMinute')} placeholder="MM" />
@@ -1386,7 +1756,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
           </div>
 
           <div className="detail-form-row">
-            <span className="detail-form-label">{basicInputI18n.birthPlaceLabel}</span>
+            <span className={koBirthLabelClassName}>{basicInputI18n.birthPlaceLabel}</span>
             <input className="detail-input detail-input-place" type="text" value={form.birthCountry} onChange={handleInputChange('birthCountry')} placeholder={basicInputI18n.countryPlaceholder} />
             <input className="detail-input detail-input-place" type="text" value={form.birthCity} onChange={handleInputChange('birthCity')} placeholder={basicInputI18n.cityPlaceholder} />
           </div>
@@ -1426,7 +1796,7 @@ export default function PromptDetail({ prompt, locale = 'ko' }) {
         </section>
       )}
 
-      <section className="prompt-box" aria-label="프롬프트 원문">
+      <section className="prompt-box" aria-label={localeMeta.promptBodyAria}>
         {lines.map((line, index) => (
           <p key={`${line}-${index}`} className="prompt-line">
             {line.length === 0 ? '\u00A0' : line}
