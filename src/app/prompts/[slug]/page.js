@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 
 import PromptDetail from '@/components/PromptDetail';
+import { buildPromptMetadata } from '@/lib/seo';
 import { getPromptBySlug, getPrompts } from '@/lib/prompts';
 
 export function generateStaticParams() {
@@ -12,25 +13,14 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const slug = typeof resolvedParams?.slug === 'string' ? resolvedParams.slug : '';
-  const prompt = getPromptBySlug(slug, 'ko');
+  const locale = 'ko';
+  const prompt = getPromptBySlug(slug, locale);
 
   if (!prompt) {
     return {};
   }
 
-  return {
-    title: `${prompt.detailTitle || prompt.displayTitle || prompt.title} | 유사과학 프롬프트 위키`,
-    description: '사주팔자, 타로, 점성술 프롬프트를 모아둔 정적 웹사이트',
-    alternates: {
-      canonical: `/prompts/${slug}`,
-      languages: {
-        ko: `/prompts/${slug}`,
-        en: `/en/prompts/${slug}`,
-        zh: `/zh/prompts/${slug}`,
-        ja: `/ja/prompts/${slug}`,
-      },
-    },
-  };
+  return buildPromptMetadata({ locale, prompt, slug });
 }
 
 export default async function PromptDetailPage({ params }) {

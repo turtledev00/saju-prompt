@@ -1,26 +1,11 @@
 import PromptCatalog from '@/components/PromptCatalog';
-import { getLocaleMeta, getLocalePrefix } from '@/lib/i18n';
 import { getCategoryMeta, getPrompts } from '@/lib/prompts';
+import { buildHomeMetadata } from '@/lib/seo';
 
 export const dynamicParams = false;
 
 export async function generateMetadata() {
-  const locale = 'en';
-  const localeMeta = getLocaleMeta(locale);
-
-  return {
-    title: localeMeta.siteName,
-    description: localeMeta.description,
-    alternates: {
-      canonical: getLocalePrefix(locale),
-      languages: {
-        ko: '/',
-        en: '/en',
-        zh: '/zh',
-        ja: '/ja',
-      },
-    },
-  };
+  return buildHomeMetadata('en');
 }
 
 export default function EnHome() {

@@ -2,10 +2,11 @@ import { Noto_Sans_KR } from 'next/font/google';
 
 import SiteLayoutFrame from '@/components/SiteLayoutFrame';
 import { getLocaleMeta } from '@/lib/i18n';
+import { getSiteUrl } from '@/lib/seo';
 
 import './globals.css';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+const siteUrl = getSiteUrl();
 const koMeta = getLocaleMeta('ko');
 
 export const metadata = {
@@ -28,13 +29,13 @@ export const metadata = {
   openGraph: {
     title: koMeta.siteName,
     description: koMeta.description,
-    images: ['/assets/images/prompt-1.png'],
+    images: ['/assets/images/ko/prompt-1.png'],
   },
   twitter: {
     card: 'summary_large_image',
     title: koMeta.siteName,
     description: koMeta.description,
-    images: ['/assets/images/prompt-1.png'],
+    images: ['/assets/images/ko/prompt-1.png'],
   },
 };
 
